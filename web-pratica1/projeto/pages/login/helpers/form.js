@@ -33,15 +33,14 @@ export const handle_login = event => {
 
     setTimeout(() => {
       handle_notes_redirect()
-    }, 3000)
+      const form = document.querySelector("#login-form")
+      form.reset()
+    }, 2000)
   } catch (err) {
     show_toast({
       title: "Error",
       description: err.message,
       severity: 'error'
     })
-  } finally {
-    const form = document.querySelector("#login-form")
-    form.reset()
   }
 }

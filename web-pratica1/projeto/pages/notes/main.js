@@ -1,7 +1,9 @@
+import { uuidv4 } from '../../utils/uuid.js';
+
 //Elementos
 const notesContainer = document.querySelector('#notes-container');
 const noteInput = document.querySelector('#note-content');
-const addNoteButton = document.querySelector('.add-note');
+const addNoteButton = document.querySelector('#add-note');
 
 // Funções
 function showNotes() {
@@ -20,7 +22,7 @@ function cleanNotes() {
 function addNote() {
   const notes = getNotes();
   const noteObject = {
-    id: generateID(),
+    id: uuidv4(),
     content: noteInput.value,
     fixed: false,
   };
@@ -33,10 +35,6 @@ function addNote() {
   noteInput.value = "";
 }
 
-function generateID() {
-  return Math.floor(Math.random() * 5000);
-}
-
 function createNote(id, content, fixed) {
   const element = document.createElement("div");
   element.classList.add("note");
@@ -47,16 +45,12 @@ function createNote(id, content, fixed) {
   element.appendChild(textarea);
 
   const pinIcon = document.createElement("i")
-  pinIcon.classList.add(...["bi", "bi-pin"])
+  pinIcon.classList.add(...["note-nav", "bi", "bi-pin"])
   element.appendChild(pinIcon);
 
   const deleteIcon = document.createElement("i")
-  deleteIcon.classList.add(...["bi", "bi-x-lg"])
+  deleteIcon.classList.add(...["note-nav", "bi", "bi-x-lg"])
   element.appendChild(deleteIcon);
-
-  const duplicateIcon = document.createElement("i")
-  duplicateIcon.classList.add(...["bi", "bi-file-earmark-plus"])
-  element.appendChild(duplicateIcon);
 
 
   if (fixed) {
@@ -69,9 +63,6 @@ function createNote(id, content, fixed) {
   })
   element.querySelector(".bi-x-lg").addEventListener("click", () => {
     deleteNote(id, element);
-  })
-  element.querySelector(".bi-file-earmark-plus").addEventListener("click", () => {
-    copyNote(id);
   })
 
   return element;
@@ -97,7 +88,7 @@ function copyNote(id) {
   const targetNote = notes.filter((note) => note.id === id)[0];
 
   noteObject = {
-    id: generateID(),
+    id: uuidv4(),
     content: targetNote.content,
     fixed: false,
   };
