@@ -1,0 +1,40 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex:3;
+}
+
+main {
+    flex: 6;
+}
+
+footer{
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+
+ul {
+    display: flex;
+    min-width: 200px;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
