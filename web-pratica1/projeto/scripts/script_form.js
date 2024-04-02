@@ -87,8 +87,3 @@ function Principal() {
 
 root.append(Cabecalho());
 root.append(Principal());
-
-
-//Bloco de Notas
-
-
