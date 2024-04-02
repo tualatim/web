@@ -29,7 +29,7 @@ function Formulario() {
   inputSenha.setAttribute("type", "password");
   inputSenha.setAttribute("name", "senha");
   inputSenha.setAttribute("placeholder", "Senha");
-  //inputSenha.setAttribute("autocomplete", "current-password"); // adicionado
+  //inputSenha.setAttribute("autocomplete", "current-password"); 
   inputSenha.setAttribute("required", true);
 
   const inputSubmit = document.createElement("input");
