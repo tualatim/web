@@ -56,7 +56,7 @@ function efetuarLogin(event) {
   const inputSenha = document.querySelector('input[type="password"]');
 
   //chamada API Rest
-  fetch('', {
+  fetch('https://jsonplaceholder.typicode.com/posts', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

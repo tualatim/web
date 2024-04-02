@@ -59,7 +59,7 @@ function efetuarLogin(event) {
 
   //chamada API Rest
   //arrumar o caminho do servidor
-  fetch('', {
+  fetch('https://jsonplaceholder.typicode.com/posts', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +69,7 @@ function efetuarLogin(event) {
     .then((response) => {
       if (response.ok) {
         console.log("Login bem-sucedido");
-        window.location.href = "./index.html";        
+        window.location.href = "./bloco-de-notas.html";        
       } else {
         console.error("Erro ao fazer login");
       }
