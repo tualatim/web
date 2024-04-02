@@ -6,17 +6,21 @@ const addNoteButton = document.querySelector('.add-note');
 // Funções
 
 function showNotes(){
-  getNotes().forEach((notes) => {
+  getNotes().forEach((note) => {
     const noteElement = createNote(note.id, note.content, note.fixed);
     
     notesContainer.appendChild(noteElement);
   })  
+}
+
+function cleanNotes(){
+  notesContainer.replaceChild
+
 
 }
 
-
 function addNote(){
-  const notes = [];
+  const notes = getNotes();
   const noteObject = {
     id: generateID(),
     content: noteInput.value, 
@@ -44,8 +48,32 @@ function createNote(id, content, fixed){
   textarea.placeholder = "Adicione algum texto";
   
   element.appendChild(textarea);
+
+  const pinIcon = document.createElement("i")
+  pinIcon.classList.add(...["bi", "bi-pin"])
+
+  element.appendChild(pinIcon);
+
+  if(fixed){
+    element.classList.add("fixed");
+  }
+
+  //Eventos dp elemento 
+  element.querySelector(".bi-pin").addEventListener("click", () => {
+    toggleFixNote(id);
+  })
   return element;
 }
+
+function toggleFixNote(id) {
+  const notes = getNotes();
+  const targetNote = notes.filter((note) => note.id === id)[0];
+  targetNote.fixed = !targetNote.fixed;
+  console.log(notes);
+}
+
+
+
 
 //Local Storage 
 
@@ -60,4 +88,7 @@ function saveNotes(notes){
 } 
 
 //Eventos 
-addNoteButton.addEventListener('click', () => addNote() )
+addNoteButton.addEventListener('click', () => addNote())
+
+//Inicialização
+showNotes();
