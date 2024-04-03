@@ -4,7 +4,6 @@ const noteInput = document.querySelector('#note-content');
 const addNoteButton = document.querySelector('.add-note');
 
 // Funções
-
 function showNotes(){
   getNotes().forEach((note) => {
     const noteElement = createNote(note.id, note.content, note.fixed);
@@ -14,9 +13,7 @@ function showNotes(){
 }
 
 function cleanNotes(){
-  notesContainer.replaceChild
-
-
+  notesContainer.replaceChildren([]);
 }
 
 function addNote(){
