@@ -44,7 +44,6 @@ function createNote(id, content, fixed){
   const textarea = document.createElement("textarea");
   textarea.value = content;
   textarea.placeholder = "Adicione algum texto";
-  
   element.appendChild(textarea);
 
   const pinIcon = document.createElement("i")
@@ -71,17 +70,11 @@ function createNote(id, content, fixed){
   element.querySelector(".bi-x-lg").addEventListener("click", () => {
     deleteNote(id, element);
   })
-  element.querySelector(".bi--").addEventListener("click", () => {
-    toggleFixNote(id);
+  element.querySelector(".bi-file-earmark-plus").addEventListener("click", () => {
+    copyNote(id);
   })
 
   return element;
-
-
-
-
-
-
 }
 
 
@@ -89,6 +82,23 @@ function deleteNote(id, element){
   const notes = getNotes().filter((note) => note.id !== id);
   saveNotes(notes);
   notesContainer.removeChild(element)
+}
+
+function copyNote(id){
+  const notes = getNotes();
+  
+  const targetNote = notes.filter((note) => note.id === id)[0];
+
+  noteObject = {
+    id: generateID(),
+    content: targetNote.content, 
+    fixed: false,
+  };
+  const noteElememt = createNote(noteObject.id, noteObject.content, noteObject.fixed);
+  notesContainer.appendChild(noteElememt);
+
+  notes.push(noteObject);
+  saveNotes(notes);  
 }
 
 function toggleFixNote(id) {
@@ -105,7 +115,7 @@ function getNotes(){
   const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 
   const orderedNotes = notes.sort((a, b)=> (a.fixed > b.fixed ? -1 : 1));
-
+  
   return orderedNotes;
 }
 
