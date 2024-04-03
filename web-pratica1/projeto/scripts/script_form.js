@@ -58,7 +58,6 @@ function efetuarLogin(event) {
   const inputSenha = document.querySelector('input[type="password"]');
 
   //chamada API Rest
-  //arrumar o caminho do servidor
   fetch('https://jsonplaceholder.typicode.com/posts', {
     method: "POST",
     headers: {
