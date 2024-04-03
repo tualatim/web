@@ -15,7 +15,6 @@ export const handle_signin = event => {
   add_user({ name, email, password })
 
   const form = document.querySelector("#login-form")
-  form.reset()
 
   show_toast({
     title: "Indo",
@@ -24,6 +23,7 @@ export const handle_signin = event => {
   })
 
   setTimeout(() => {
+    form.reset()
     handle_login_redirect()
   }, 3000)
 }
