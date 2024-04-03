@@ -19,7 +19,7 @@ header{
     justify-content: space-around;
 }
 
-#serach-container {
+#search-container {
     display: flex;
     align-items: center;
     gap: 1rem;
