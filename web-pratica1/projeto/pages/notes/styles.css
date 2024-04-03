@@ -19,9 +19,10 @@ header{
     justify-content: space-around;
 }
 
-#serach-container {
+#search-container {
     display: flex;
     align-items: center;
+    justify-content: center; 
     gap: 1rem;
 }
 
@@ -33,6 +34,7 @@ header{
     font-weight: bold;
     color: #ddd;
     width: 400px;
+    margin-left: 0;
 }
 
 #search-input::placeholder {
@@ -48,11 +50,6 @@ header{
     cursor: pointer;
     transition: 0.4s;
 }
-
-export-notes:hover{
-    background-color: #fff;
-    color:#333;
-} 
 
 #add-note-container {
     display: flex;
