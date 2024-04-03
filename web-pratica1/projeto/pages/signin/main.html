@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="../../styles/theme.css">
+
+  <title>Sign In</title>
+
+  <script type="module" src="./main.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1 id="title">Sign in</h1>
+    <form id="login-form">
+      <input type="text" name="name" placeholder="Nome" autocomplete="name" required />
+      <input type="email" name="email" placeholder="Email" autocomplete="email" required />
+      <input type="password" name="password" placeholder="Senha" required />
+
+      <input type="submit" value="Criar Conta" />
+    </form>
+    <div id="login-redirect" class="text-button">Fazer Login</div>
+  </main>
+</body>
+
+</html>
