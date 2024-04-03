@@ -77,6 +77,13 @@ function createNote(id, content, fixed){
   return element;
 }
 
+function toggleFixNote(id) {
+  const notes = getNotes();
+  const targetNote = notes.filter((note) => note.id === id)[0];
+  targetNote.fixed = !targetNote.fixed;
+  saveNotes(notes);
+  showNotes();
+}
 
 function deleteNote(id, element){
   const notes = getNotes().filter((note) => note.id !== id);
@@ -100,15 +107,6 @@ function copyNote(id){
   notes.push(noteObject);
   saveNotes(notes);  
 }
-
-function toggleFixNote(id) {
-  const notes = getNotes();
-  const targetNote = notes.filter((note) => note.id === id)[0];
-  targetNote.fixed = !targetNote.fixed;
-  saveNotes(notes);
-  showNotes();
-}
-
 
 //Local Storage 
 function getNotes(){
