@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
-function Login() {
+export default function Login() {
 
     const { login, user } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -25,5 +25,3 @@ function Login() {
     </>
   );
 }
-
-export default Login;
