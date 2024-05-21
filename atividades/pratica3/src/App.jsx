@@ -4,16 +4,14 @@ import Home from "./pages/Home";
 import Novo from "./pages/Novo";
 import Error404 from "./pages/Error404";
 import Layout from "./components/Layout";
+
 import "./App.css";
 
 
 export default function App() {
   
-  console.log("meusContatos")
-
-  return (
-    
-
+    return (
+    <>
       <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout/>}>
@@ -24,5 +22,6 @@ export default function App() {
             <Route path="*" element={<Error404/>} />
           </Routes>
       </BrowserRouter>
+    </>
   );
 }
