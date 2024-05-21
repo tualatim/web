@@ -9,8 +9,12 @@ export default function Layout() {
         <h1>@Contatinhos</h1>
         <Navbar />
       </header>
-      <main><Outlet /></main>
-      <footer><p>Copyright 2023</p></footer>
+      <main>
+        <Outlet />
+        </main>
+      <footer>
+        <p>Copyright 2023</p>
+      </footer>
     </>
   );
 }

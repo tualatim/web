@@ -16,7 +16,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Layout/>}>
               <Route path="/" element={<Home />} />
-              
+            
               <Route path="/novo" element={<Novo/>} />
             </Route> 
             <Route path="*" element={<Error404/>} />
