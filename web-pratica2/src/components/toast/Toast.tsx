@@ -1,6 +1,7 @@
 import React from 'react';
+import { create_component } from '../../utils/creators.js';
 
-export default const Toast = ({ message }) => {
+ const Toast = ({ message }) => {
 	return (
 		<div className={`toast ${message.severity}`}>
 			<h4>{message.title}</h4>
@@ -8,3 +9,5 @@ export default const Toast = ({ message }) => {
 		</div>
 	);
 };
+
+export default Toast;
