@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
-//import { get_users } from '../utils/users';
-import { useNavigate } from 'react-router-dom';
-//import Toast from '../components/Toast';
 
 
+
+ function SignIn() {
+  return (
+    <div>
+      <h1>Sign In Page</h1>
+    </div>
+  );
+}
+export default SignIn;
+
+/*
 export default function SignIn() {
-
 
     return (
         <body>
@@ -23,4 +30,4 @@ export default function SignIn() {
         </body>
   );
 };
-
+*/
