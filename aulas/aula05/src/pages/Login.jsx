@@ -17,7 +17,6 @@ export default function Login() {
       navigate("/");
     }  
 
-
   return (
     <>
       <p>Welcome to Login page</p>

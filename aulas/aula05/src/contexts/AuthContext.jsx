@@ -23,7 +23,6 @@ function AuthContextProvider(props) {
     logout
   };
 
-  
   return (
     <AuthContext.Provider value={contexto}>
       {props.children}
@@ -31,4 +30,4 @@ function AuthContextProvider(props) {
   );
 }
 
-export default { AuthContext, AuthContextProvider };
+export { AuthContext, AuthContextProvider as default };

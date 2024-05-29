@@ -3,7 +3,6 @@ import ContatosContext from "../contexts/ContatosContext";
 
 export default function Novo() {
     
-
     const [nome, setNome] = useState({});
     const [telefone, setTelefone] = useState({});
     const [erroNome, setErroNome] = useState({});        
