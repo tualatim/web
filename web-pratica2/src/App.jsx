@@ -1,25 +1,23 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//import { useContext, userState } from 'react';
-//import Notes from './pages/notes';
-import SignIn from './pages/signin';
-//import Login from './pages/login';
-//import Toast from './components/toast/Toast.tsx';
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignIn from "./pages/signin/SignIn.tsx";
+import Login from "./pages/login/Login.tsx";
 
-export default function App() {
+import "./App.css";
 
+function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<p>Página não Encontrada</p>} />
         </Routes>
       </BrowserRouter>
     </>
   );
 }
-
+export default App;
 
 /*
 return (
