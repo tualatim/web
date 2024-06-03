@@ -1,24 +1,20 @@
 import { createContext, useState } from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const ContatosContext = createContext({ meusContatos: [], 
                                         incluirContato: () => {}
                                     });
 
-export const ContatosContextProvider = (props) => {
-  const { contatos, setContatos } = useState([]);
+const ContatosContextProvider = (props) =>{
+  const [ contatos, setContatos ] = useState([]);
 
   
-  const incluir = (contato) => {
+  const incluirContato = (contato) => {
     setContatos([...contatos, contato]);
   }; 
   const contexto = {
     meusContatos: contatos,
-    incluirContato: incluir
-  };
-
-  ContatosContextProvider.propTypes = {
-    children: PropTypes.element.isRequired
+    incluirContato: incluirContato
   };
 
   return (
@@ -26,6 +22,11 @@ export const ContatosContextProvider = (props) => {
       {props.children}
     </ContatosContext.Provider>
   );
+}
+
+// Adicionando validação de props
+ContatosContextProvider.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
-export default {ContatosContext}
+export {ContatosContext, ContatosContextProvider};
