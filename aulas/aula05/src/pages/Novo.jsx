@@ -1,6 +1,6 @@
-import { useContext, useState } from "react"
-import { useNavigate } from "react-dom-router"
-import { ContatoContext } from "../contexts/ContatoContext"
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ContatoContext } from "../contexts/ContatoContext";
 
 export default function Novo(){
     const navigate = useNavigate();
@@ -26,3 +26,4 @@ export default function Novo(){
         </>
     )
 }
+

@@ -4,11 +4,10 @@ import { createContext, useState } from "react";
 const AuthContext = createContext({});
 
 function AuthContextProvider(props) {
-  
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({email: null, logado:false});
 
   function login(email, senha) {
-    if (email === "jose@email.com" && senha === "abc1234") {
+    if (email === "jose@email.com" && senha === "abc123") {
       setUser({ email, logado: true });
     }
   }
@@ -20,7 +19,7 @@ function AuthContextProvider(props) {
   const contexto = {
     user,
     login,
-    logout
+    logout,
   };
 
   return (
@@ -30,4 +29,4 @@ function AuthContextProvider(props) {
   );
 }
 
-export { AuthContext, AuthContextProvider as default };
+export { AuthContext, AuthContextProvider };

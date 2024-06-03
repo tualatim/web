@@ -11,7 +11,7 @@ async function criar(contato) {
     return await response.json()
 }
 
-async function listar(contato) {
+async function listar() {
     const response = await fetch(url, {
         method:"GET",
     })
@@ -19,15 +19,15 @@ async function listar(contato) {
 }
 
 async function consultar(id) {
-    const response = await fetch(`${url}/${contato.id}`, {
+    const response = await fetch(`${url}/${id}`, {
         method:"GET",
     })
     return await response.json()
 }
 
 async function editar(contato) {
-    const {id, nome, telefone} = contato
-    const response = await fetch(`${url}/${contato.id}`, {
+    const {id, nome, telefone} = contato;
+    const response = await fetch(`${url}/${id}`, {
         method:"PUT",
         body: JSON.stringify({nome, telefone}),
         headers:{
