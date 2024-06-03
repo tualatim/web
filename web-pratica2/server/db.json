@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Victor",
+      "email": "victor@email.com",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "name": "Victor 2",
+      "email": "victor2@email.com",
+      "password": "12345"
+    },
+    {
+      "id": 3,
+      "name": "teste",
+      "email": "teste@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": 4,
+      "name": "victor",
+      "email": "victorr@email.com",
+      "password": "12345"
+    },
+    {
+      "id": 5,
+      "name": "teste",
+      "email": "teste@gma421il.com",
+      "password": "12345"
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "content": "nota de teste fixada",
+      "fixed": true,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "content": "nota de teste user 2",
+      "fixed": false,
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "content": "tretertergdfs",
+      "fixed": false,
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "content": "sdafsdafdsaf",
+      "fixed": false,
+      "userId": 1
+    },
+    {
+      "id": 5,
+      "content": "adsadasdasdasdsad",
+      "fixed": false,
+      "userId": 1
+    }
+  ]
+}

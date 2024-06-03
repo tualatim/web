@@ -39,6 +39,7 @@ export const Note = ({ content: initialContent, fixed: initialFixed, id, fetchNo
       try {
         await updateNote({ noteId: id, content, fixed })
         toast.info("Nota atualizada com sucesso")
+        fetchNotes()
       } catch (err: any) {
         toast.error(err.message ?? "Não foi possivel salvar as alterações da nota. Tente novamente mais tarde.")
       }

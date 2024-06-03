@@ -38,7 +38,7 @@ export const useNotesServices = () => {
     return response.data
   }
 
-  const removeNote = async ({ noteId }: { noteId: string }): Promise<boolean> => {
+  const removeNote = async ({ noteId }: { noteId: number }): Promise<boolean> => {
     validateAuth()
 
     if (!noteId) {
@@ -50,7 +50,7 @@ export const useNotesServices = () => {
     return response.data
   }
 
-  const updateNote = async ({ noteId, content, fixed }: { noteId: string, content: string, fixed: boolean }) => {
+  const updateNote = async ({ noteId, content, fixed }: { noteId: number, content: number, fixed: boolean }) => {
     validateAuth()
 
     if (!noteId) {

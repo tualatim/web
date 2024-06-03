@@ -3,17 +3,9 @@ import './index.css'
 import { INote } from '../../types'
 import { useAuthService, useNotesServices } from '../../services'
 import { toast } from 'react-toastify'
-import { LoadingBar } from '../../components'
 import { Note } from './components'
 
-enum STATE_MACHINE_ENUM {
-  IDLE = "IDLE",
-  LOADING = "LOADING",
-  READY = "READY"
-}
-
 export const Notes = () => {
-  const [stateMachine, setStateMachine] = useState<STATE_MACHINE_ENUM>(STATE_MACHINE_ENUM.IDLE)
   const [notes, setNotes] = useState<INote[]>([])
 
   const [newNoteContent, setNewNoteContent] = useState<string>("")
@@ -27,24 +19,29 @@ export const Notes = () => {
 
   const fetchNotes = async () => {
     try {
-      setStateMachine(STATE_MACHINE_ENUM.LOADING)
+      setNotes([])
       const notes = await getNotes()
 
       setNotes(notes)
     } catch (err: any) {
       toast.error(err.message ?? "Não foi possivel capturar as notas. Tente novamente mais tarde")
-    } finally {
-      setStateMachine(STATE_MACHINE_ENUM.READY)
     }
   }
 
-  const Notes = () => (
-    <div id="notes-container">
-      {notes.map(note => (
-        <Note {...note} fetchNotes={fetchNotes} />
-      ))}
-    </div>
-  )
+  const Notes = () => {
+    const fixedNotes = notes.filter(({ fixed }) => fixed)
+    const nonFixedNotes = notes.filter(({ fixed }) => !fixed)
+
+    const mergedNotes = fixedNotes.concat(nonFixedNotes)
+
+    return (
+      <div id="notes-container">
+        {mergedNotes.sort((a, b) => Number(b.fixed) - Number(a.fixed)).map(note => (
+          <Note {...note} fetchNotes={fetchNotes} />
+        ))}
+      </div>
+    )
+  }
 
   const handleLogout = () => {
     logout()
@@ -74,12 +71,6 @@ export const Notes = () => {
     }
   }
 
-  const states = {
-    IDLE: <></>,
-    LOADING: <LoadingBar />,
-    READY: <Notes />
-  }
-
   return (
     <>
       <header id="search-header">
@@ -102,7 +93,7 @@ export const Notes = () => {
 
       </header>
 
-      {states[stateMachine]}
+      <Notes />
     </>
   )
 }
