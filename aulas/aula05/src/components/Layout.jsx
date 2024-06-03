@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
-function Layout() {
+export default function Layout() {
   const { logout } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -25,5 +25,3 @@ function Layout() {
     </>
   );
 }
-
-export default Layout

@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-
+import PropTypes from 'prop-types';
 import service from "../services/ContatoService";
 
 const ContatoContext = createContext({});
@@ -24,6 +24,10 @@ function ContatoContextProvider(props){
         return await service.editar(contato);
     }
 
+    async function excluir(id) {
+        return await service.remover(id);
+    }
+
     const contexto = {
         meusContatos: contatos, 
         inserirContato: inserir,
@@ -34,10 +38,15 @@ function ContatoContextProvider(props){
     };
 
     return (
-        <ContatoContextProvider value={contexto}>
+        <ContatoContext.Provider value={contexto}>
             {props.children}
-        </ContatoContextProvider>
+        </ContatoContext.Provider>
     );
 }
 
-export { ContatoContext, ContatoContextProvider};
+// Adicionando validação de props
+ContatoContextProvider.propTypes = {
+    children: PropTypes.node.isRequired
+  };
+
+export { ContatoContext, ContatoContextProvider };
