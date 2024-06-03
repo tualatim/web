@@ -1,13 +1,17 @@
 html {
   height: 100%;
-  }
-  body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: #cbccce;
-  margin: auto;
-  }
-  .erro {
-  color: #800000;
-  }
+}
+body {
+height: 100%;
+display: flex;
+flex-direction: column;
+color: #cbccce;
+margin: auto;
+}
+.erro {
+color: #800000;
+}
+
+.App {
+  text-align: center;
+}
