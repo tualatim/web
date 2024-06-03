@@ -14,6 +14,10 @@ interface IRegisterUserProps {
 }
 
 export const registerUser = async ({ name, email, password }: IRegisterUserProps) => {
+  const userAlreadyExists = await getUserByEmail({ email })
+
+  if (userAlreadyExists) throw new Error("Usuário já existente")
+
   const response = await post<IUser[]>('/users', { name, email, password })
   return response
 }

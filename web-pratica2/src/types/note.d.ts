@@ -1,6 +1,6 @@
 export interface INote {
-  id: string
+  id: number
   content: string
   fixed: boolean
-  userId: string
+  userId: number
 }
