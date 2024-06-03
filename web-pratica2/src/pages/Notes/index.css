@@ -1,0 +1,123 @@
+header#search-header {
+  background-color: var(--secondary-background-contrast);
+  border-bottom: 1px solid #ccc;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+div#navigation-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: .4rem;
+}
+
+div#logout-button {
+  justify-self: flex-end;
+  color: var(--secondary-text)
+}
+
+#search-container {
+  display: flex;
+  width: min(100%, 500px);
+  height: 3rem;
+}
+#search-container form{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+
+#search-container input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-text);
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+#search-container input,
+#search-container #add-note {
+  padding: 10px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+#search-container #add-note {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  background-color: var(--secondary-background);
+  color: var(--primary-text);
+  font-size: 2.1rem;
+}
+
+/* Notas */
+
+#notes-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.note {
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: var(--secondary-background-contrast);
+    border-radius: 10px;
+    position: relative;
+}
+
+.note textarea {
+    background-color: transparent;
+    resize: none;
+    color: var(--primary-text);
+    border: none;
+    height: 100%;
+    outline: none;
+}
+
+.note-nav {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  background-color: var(--primary-background);
+  border-radius: 3px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.note .pin {
+  left: 10px;
+}
+
+.note .xclose {
+    left: 50px;
+}
+
+.note.fixed{
+  background-color: #3c3c3f;
+}
+
+
