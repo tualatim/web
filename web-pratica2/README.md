@@ -11,3 +11,5 @@ Para rodar o projeto, execute em terminais separados:
 yarn && yarn start
 yarn server:mock
 ```
+
+Lembre-se de adicionar o arquivo de .env baseado no .env.example
