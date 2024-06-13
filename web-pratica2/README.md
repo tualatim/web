@@ -12,4 +12,9 @@ yarn && yarn start
 yarn server:mock
 ```
 
+```bash
+npm install && npm run start
+npm run server:mock
+```
+
 Lembre-se de adicionar o arquivo de .env baseado no .env.example
